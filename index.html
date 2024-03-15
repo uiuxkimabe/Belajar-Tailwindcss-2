@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+                theme: {
+                    // Tambahkan Custom sizing dibawah extend
+                    extend: {
+                        colors: {
+                            clifford: '#da373d',
+                        },
+                        spacing : {
+                            "13": "3.25rem"
+                        },
+                        fontFamily : {
+                            poppins: "Poppins"
+                        }
+                    }
+                }
+            }
+    </script>
+    <title>Belajar Tailwind</title>
+    <style type="text/tailwindcss">
+        
+    </style>
+</head>
+<body>
+    <h1 class="text-6xl text-center font-bold my-8">Hello Kim <span class="bg-gradient-to-r from-blue-600 to-emerald-400 text-transparent bg-clip-text">Afrianto</span></h1>
+
+    <!-- Spacing -->
+
+    <!-- Margin -->
+    <section class="mb-10 bg-indigo-200 text-center">
+        <h2>Spacing Margin</h2>
+        <div class="m-13">Margin</div>
+    </section>
+
+    <!-- Padding -->
+    <section class="mb-10 text-center >
+        <h2>Spacing Padding</h2>
+        <div class="p-13">Padding</div>
+    </section>
+
+    <!-- Sizing -->
+    <section class="mb-10 text-center bg-gradient-to-tr from-violet-700 via-red-400 to-fuchsia-400 ">
+        <h2 class="py-8">Sizing<h2>
+        <div class="w-32 h-32 bg-emerald-600 mx-auto">Kotak 1</div>
+        <div class="max-w-xs h-32 bg-indigo-400 mx-auto">Kotak 2</div>
+    </section>
+
+    <!-- Typography -->
+    <section class="mb-96 font-poppins max-w-xl mx-auto">
+        <h2 class="mb-2 font-semibold text-3xl font-serif">Belajar Mengenai Typography pada Tailwindcss</h2>
+        <div class="mb-4 italic underline">By Kiki Afrianto, 1 Januari 2024</div>
+        <p class="mb-4 text-slate-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. <a href="" class="underline font-bold">Molestiae</a>, est culpa earum corrupti tempora quasi soluta aliquid reiciendis architecto nesciunt? Libero magni sint, id voluptatem molestias accusantium quo inventore dicta.</p>
+        <blockquote class="mb-4 italic font-thin text-xl bg-yellow-300 text-yellow-800">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis porro perspiciatis rem assumenda deserunt sequi inventore cum nobis quae itaque?"</blockquote>
+        <p class="mb-4 text-slate-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis sunt cumque minus numquam ex delectus veritatis praesentium laudantium repellendus incidunt non aperiam, sequi earum, quia ducimus reiciendis magni aliquid minima.</p>
+    </section>
+
+</body>
+</html>
