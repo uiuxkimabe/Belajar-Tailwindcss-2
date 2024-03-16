@@ -11,6 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
                 theme: {
                     // Tambahkan Custom sizing dibawah extend
                     extend: {
@@ -29,10 +30,12 @@
     </script>
     <title>Belajar Tailwind</title>
     <style type="text/tailwindcss">
-        
+        #toggle:checked ~ label .ball {
+            @apply translate-x-6;
+        }
     </style>
 </head>
-<body>
+<body class="dark:bg-slate-800 dark:text-slate-100">
     <h1 class="text-6xl text-center font-bold my-8">Hello Kim <span class="bg-gradient-to-r from-blue-600 to-emerald-400 text-transparent bg-clip-text">Afrianto</span></h1>
 
     <!-- Spacing -->
@@ -81,21 +84,31 @@
 
     <hr class="my-20">
 
+    <!-- Costum Button for Dark Modes Activate -->
+    <div class="mb-10">
+        <input type="checkbox" id="toggle" class="hidden">
+        <label for="toggle">
+            <div class="w-12 h-5 bg-black rounded-full mx-auto flex items-center p-1 cursor-pointer">
+                <span class="ball rounded-full bg-white w-4 h-4 block"></span>
+            </div>
+        </label>
+    </div>
+
     <!-- Pseudo Element -->
 
-    <button class="py-3 px-5 mt-5 m-auto block bg-indigo-600 text-indigo-300 font-bold hover:bg-indigo-300 hover:text-indigo-600 focus:ring-4 active:ring-4 active:ring-indigo-600 focus:ring-indigo-600 rounded-md font-poppins">Klik Disini</button>
+    <button class="py-3 px-5 mt-5 m-auto block bg-indigo-600 text-indigo-300 font-bold hover:bg-indigo-300 hover:text-indigo-600 focus:ring-4 active:ring-4 active:ring-indigo-600 focus:ring-indigo-600 rounded-md font-poppins dark:bg-slate-950 dark:text-slate-400 dark:hover:bg-sky-600 dark:hover:text-sky-950">Klik Disini</button>
 
     <!-- Using Group -->
-    <div class="max-w-lg my-10 border border-slate-200 rounded-lg mx-auto p-5 shadow-md hover:bg-sky-500 group">
-        <h5 class="font-bold text-slate-600 text-lg mb-3 group-hover:text-white">My Card</h5>
-        <p class="text-slate-500 group-hover:text-lg group-hover:text-white selection:bg-pink-400 first-line:uppercase first-line:tracking-widest first-letter:text-5xl first-letter:float-left first-letter:mr-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore aspernatur ad autem? Deserunt voluptate soluta ullam provident, cum labore quisquam maiores necessitatibus architecto ea adipisci quam dicta, magni enim quasi!</p>
+    <div class="max-w-lg my-10 border dark:border-0 border-slate-200 rounded-lg mx-auto p-5 shadow-md hover:bg-sky-500 dark:bg-slate-900 group">
+        <h5 class="font-bold text-slate-600 dark:text-white text-lg mb-3 group-hover:text-white">My Card</h5>
+        <p class="text-slate-500 dark:text-white group-hover:text-white  selection:bg-pink-400 first-line:uppercase first-line:tracking-widest first-letter:text-5xl first-letter:float-left first-letter:mr-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore aspernatur ad autem? Deserunt voluptate soluta ullam provident, cum labore quisquam maiores necessitatibus architecto ea adipisci quam dicta, magni enim quasi!</p>
     </div>
 
     <div class="card max-w-lg border border-slate-200 mx-auto shadow-md p-5 rounded-md">
         <form action="">
             <label for="email" id="email">
-                <span class="block mb-2 text-slate-600 font-semibold after:content-['*'] after:text-red-600 after:ml-1">Email</span>
-                <input type="email" placeholder="Masukkan email" class="px-3 py-2 shadow rounded w-full ring-2 ring-sky-300 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 invalid:active:ring-pink-700 peer">
+                <span class="block mb-2 text-slate-600 font-semibold after:content-['*'] after:text-red-600 after:ml-1 dark:text-white">Email</span>
+                <input type="email" placeholder="Masukkan email" class="px-3 py-2 shadow rounded w-full ring-2 ring-sky-300 text-sm placeholder:text-slate-400 dark:text-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 invalid:active:ring-pink-700 peer">
 
                 <!-- Using Peer -->
                 <p class="text-pink-600 mt-2 text-sm hidden peer-invalid:block">Email Tidak Valid</p>
@@ -104,5 +117,15 @@
     </div>
 
     <div class="mb-96"></div>
+
+
+
+    <script>
+        const checkbox = document.querySelector('#toggle')
+        const html = document.querySelector('html')
+        checkbox.addEventListener('click',()=> {
+            html.classList.toggle('dark');
+        })
+    </script>
 </body>
 </html>
