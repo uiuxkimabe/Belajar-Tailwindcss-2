@@ -23,6 +23,24 @@
                         },
                         fontFamily : {
                             poppins: "Poppins"
+                        },
+                        animation: {
+                            'spin-slow': 'spin 3s linear infinite',
+                            // panggil animasi buat sendiri
+                            'shake': 'shake 2s linear infinite',
+                        },
+                        // membuat animasi sendiri
+                        // 1. membuat keyframse dulu
+                        keyframes: {
+                            // nama keyframes
+                            shake: {
+                                '0%, 100%': {
+                                    transform: 'rotate(-15deg)'
+                                },
+                                '50%': {
+                                    transform: 'rotate(15deg)'
+                                },
+                            },
                         }
                     }
                 }
@@ -116,9 +134,33 @@
         </form>
     </div>
 
+    
+    
+    <!-- Transform , Transition & Animation -->
+    <hr class="my-20"> 
+    
+    <div class="w-full p-4 bg-slate-500 group ">
+        <div
+            class="w-40 h-40 bg-gradient-to-tr from-blue-400 to-blue-300 group-hover:bg-gradient-to-tr group-hover:from-purple-500 group-hover:to-purple-300 rounded-lg shadow-lg m-auto group-hover:scale-150 group-hover:rotate-180 ease-in-out duration-500 group-hover:origin-top-left">
+        </div>
+        <div
+            class="w-40 h-40 bg-gradient-to-tr from-purple-600 to-purple-300 rounded-lg shadow-lg m-auto ease-in-out duration-500 my-16 animate-spin-slow">
+        </div> 
+        <div
+            class="w-10 h-10 bg-gradient-to-tr from-red-600 to-red-300 rounded-full shadow-lg m-auto ease-in-out duration-500 my-16 animate-ping">
+        </div> 
+        <div
+            class="w-10 h-10 bg-gradient-to-tr from-pink-600 to-pink-300 rounded-full shadow-lg m-auto ease-in-out duration-500 my-16 animate-pulse">
+        </div> 
+        <div
+            class="w-40 h-40 bg-gradient-to-tr from-emerald-600 to-emerald-300 rounded-full shadow-lg m-auto ease-in-out duration-500 my-16 animate-bounce">
+        </div> 
+        <div
+            class="w-40 h-40 bg-gradient-to-tr from-amber-600 to-amber-300 rounded-md shadow-lg m-auto ease-in-out duration-500 my-16 animate-shake">
+        </div> 
+    </div>
+
     <div class="mb-96"></div>
-
-
 
     <script>
         const checkbox = document.querySelector('#toggle')
