@@ -8,12 +8,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind css -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // tailwind.config = {
-            
-        // }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                // Tambahkan Custom sizing dibawah extend
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    },
+                    spacing: {
+                        "13": "3.25rem",
+                    },
+                    fontFamily: {
+                        poppins: "Poppins"
+                    },
+                    animation: {
+                        'spin-slow': 'spin 3s linear infinite',
+                        // panggil animasi buat sendiri
+                        'shake': 'shake 2s linear infinite',
+                    },
+                    // membuat animasi sendiri
+                    // 1. membuat keyframse dulu
+                    keyframes: {
+                        // nama keyframes
+                        shake: {
+                            '0%, 100%': {
+                                transform: 'rotate(-15deg)'
+                            },
+                            '50%': {
+                                transform: 'rotate(15deg)'
+                            },
+                        },
+                    },
+                }
+            }
+        }
     </script>
     <title>Belajar Tailwind</title>
     <!-- <style type="text/tailwindcss">
